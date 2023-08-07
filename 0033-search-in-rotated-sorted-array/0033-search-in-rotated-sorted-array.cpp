@@ -8,20 +8,24 @@ public:
 
         while(beg <= end) {
             int mid = (beg+end)/2;
-
             if(nums[mid] == target) {
                 return mid;
-            } else if(nums[beg] <= nums[mid]) {
+            }
+            // First Half 
+            else if(nums[mid] >= nums[beg]) {
                 if(target >= nums[beg] && target <= nums[mid]) {
                     end = mid-1;
-                } else { 
+                } else {
                     beg = mid+1;
                 }
-            } else {
-                if(target >= nums[mid] && target <= nums[end]) {
+            }
+
+            // Second Half
+            else {
+                if(target >= nums[mid] && target<= nums[end]) {
                     beg = mid+1;
-                } else { 
-                    end =  mid-1;
+                } else {
+                    end = mid-1;
                 }
             }
         }
