@@ -2,22 +2,23 @@ class Solution {
 public:
     bool isPalindrome(int x) {
 
-        long rev = 0,temp=x;
-        if(x < 0) {
+        if(x<0) {
             return false;
         }
 
+        long int res = 0;
+        long int temp = x;
         while(temp != 0) {
-            int rem = temp%10;
-            rev = rev*10 + rem;
+            long int rem = temp%10;
+            res = res*10+rem;
             temp/=10;
         }
 
-        if(x == rev) {
-            return 1;
+        if(res == x) {
+            return true;
         }
 
-        return 0;
+        return false;
         
     }
 };
