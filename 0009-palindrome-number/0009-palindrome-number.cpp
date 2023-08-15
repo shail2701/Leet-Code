@@ -6,15 +6,15 @@ public:
             return false;
         }
 
-        long int res = 0;
+        long int ans = 0;
         long int temp = x;
         while(temp != 0) {
             long int rem = temp%10;
-            res = res*10+rem;
+            ans = ans*10+rem;
             temp/=10;
         }
 
-        if(res == x) {
+        if(ans == x) {
             return true;
         }
 
